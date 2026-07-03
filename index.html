@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1004 días a tu lado</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: #1B1B1B;
+color: #E8D9C1;
+font-family: 'Cormorant Garamond', serif;
+line-height: 1.9;
+min-height: 100vh;
+font-size: 1.15em;
+}
+
+body::before {
+content: '';
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background:
+radial-gradient(ellipse at 50% 0%, rgba(113,9,18,0.08) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 80%, rgba(194,141,57,0.05) 0%, transparent 50%);
+pointer-events: none;
+z-index: 0;
+}
+
+header {
+background: linear-gradient(180deg, #4B1D3F 0%, #1B1B1B 100%);
+padding: 70px 20px 50px;
+text-align: center;
+border-bottom: 3px solid #D8A7B1;
+position: relative;
+overflow: hidden;
+}
+
+header::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 10%;
+right: 10%;
+height: 1px;
+background: linear-gradient(90deg, transparent, #D8A7B1, transparent);
+}
+
+header h1 {
+font-family: 'Playfair Display', serif;
+font-size: 3.2em;
+color: #E8D9C1;
+margin-bottom: 12px;
+text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+letter-spacing: 2px;
+}
+
+header .subtitle {
+font-size: 1.1em;
+color: #D8A7B1;
+font-weight: 300;
+letter-spacing: 4px;
+text-transform: uppercase;
+font-style: italic;
+}
+
+.ornament {
+text-align: center;
+font-size: 1.2em;
+color: #D8A7B1;
+margin: 25px 0;
+letter-spacing: 15px;
+opacity: 0.6;
+font-family: 'Playfair Display', serif;
+}
+
+.contador {
+background: rgba(13,13,13,0.95);
+padding: 35px 20px;
+text-align: center;
+border-bottom: 1px solid rgba(194,141,57,0.2);
+position: relative;
+}
+
+.contador::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, #D8A7B1, transparent);
+}
+
+.contador-numero {
+font-family: 'Playfair Display', serif;
+font-size: 4.5em;
+color: #D8A7B1;
+font-weight: 700;
+text-shadow: 0 0 30px rgba(194,141,57,0.2);
+letter-spacing: 5px;
+}
+
+.contador-label {
+color: #E8D9C1;
+font-size: 0.9em;
+letter-spacing: 6px;
+text-transform: uppercase;
+margin-top: 8px;
+opacity: 0.8;
+}
+
+nav {
+background: #1B1B1B;
+padding: 20px;
+text-align: center;
+border-bottom: 1px solid rgba(194,141,57,0.15);
+}
+
+nav a {
+display: inline-block;
+padding: 10px 30px;
+margin: 0 8px;
+background: transparent;
+color: #D8A7B1;
+text-decoration: none;
+border: 1px solid rgba(194,141,57,0.4);
+letter-spacing: 2px;
+transition: all 0.4s ease;
+text-transform: uppercase;
+font-size: 0.8em;
+font-family: 'Cormorant Garamond', serif;
+}
+
+nav a:hover, nav a.active {
+background: #D8A7B1;
+color: #1B1B1B;
+border-color: #D8A7B1;
+}
+
+.poema {
+max-width: 700px;
+margin: 50px auto;
+padding: 50px 40px;
+background: rgba(75,29,63,0.15);
+border-left: 3px solid #D8A7B1;
+border-right: 1px solid rgba(194,141,57,0.1);
+position: relative;
+}
+
+.poema::before {
+content: '\201C';
+font-family: 'Playfair Display', serif;
+font-size: 5em;
+color: #4B1D3F;
+position: absolute;
+top: -10px;
+left: 20px;
+opacity: 0.4;
+line-height: 1;
+}
+
+.poema h2 {
+font-family: 'Playfair Display', serif;
+font-size: 2em;
+color: #D8A7B1;
+text-align: center;
+margin-bottom: 45px;
+letter-spacing: 2px;
+font-weight: 400;
+}
+
+.poema p {
+font-size: 1.15em;
+font-style: italic;
+margin-bottom: 22px;
+color: #E8D9C1;
+text-align: center;
+line-height: 2.1;
+font-weight: 300;
+}
+
+.poema .destacado {
+color: #D8A7B1;
+font-weight: 600;
+font-style: normal;
+}
+
+.dedicatoria {
+max-width: 600px;
+margin: 50px auto;
+padding: 50px 40px;
+text-align: center;
+background: linear-gradient(145deg, rgba(75,29,63,0.2), rgba(13,13,13,0.8));
+border: 1px solid rgba(194,141,57,0.2);
+position: relative;
+}
+
+.dedicatoria::before,
+.dedicatoria::after {
+content: '\2666';
+font-size: 0.8em;
+color: #D8A7B1;
+position: absolute;
+opacity: 0.3;
+}
+
+.dedicatoria::before { top: 15px; left: 20px; }
+.dedicatoria::after { bottom: 15px; right: 20px; }
+
+.dedicatoria h3 {
+font-family: 'Playfair Display', serif;
+color: #D8A7B1;
+font-size: 1.6em;
+margin-bottom: 20px;
+letter-spacing: 2px;
+font-weight: 400;
+}
+
+.dedicatoria p {
+color: #E8D9C1;
+font-size: 1.05em;
+line-height: 2;
+font-style: italic;
+}
+
+.btn-secundario {
+display: inline-block;
+padding: 14px 45px;
+margin-top: 40px;
+background: transparent;
+color: #D8A7B1;
+text-decoration: none;
+border: 1px solid #D8A7B1;
+letter-spacing: 3px;
+transition: all 0.4s ease;
+text-transform: uppercase;
+font-size: 0.8em;
+font-family: 'Cormorant Garamond', serif;
+cursor: pointer;
+}
+
+.btn-secundario:hover {
+background: #D8A7B1;
+color: #1B1B1B;
+}
+
+footer {
+background: #1B1B1B;
+padding: 35px 20px;
+text-align: center;
+border-top: 1px solid rgba(194,141,57,0.15);
+color: #4B1D3F;
+font-size: 0.9em;
+letter-spacing: 3px;
+}
+
+footer span {
+color: #D8A7B1;
+}
+
+@media (max-width: 600px) {
+header h1 { font-size: 2em; }
+.contador-numero { font-size: 2.8em; }
+.poema { padding: 35px 20px; }
+.poema p { font-size: 1em; }
+nav a { display: block; margin: 8px auto; max-width: 220px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-content">
+<h1>1004 días a tu lado</h1>
+<p class="subtitle">Un viaje de amor, complicidad y felicidad</p>
+</div>
+</header>
+
+<div class="ornament">&diams; &bull; &diams;</div>
+
+<div class="contador">
+<div class="contador-numero">1004</div>
+<div class="contador-label">Días de amor incondicional</div>
+</div>
+
+<nav>
+<a href="index.html" class="active">Inicio</a>
+<a href="33-cosas.html">33 cosas que amo de ti</a>
+</nav>
+
+<div class="ornament">&diams; &bull; &diams;</div>
+
+<div class="poema">
+<h2>Treinta y tres mundos a tu lado</h2>
+
+<p>
+Treinta y tres veces ha dado la luna su vuelta entera,<br>
+desde que nuestros caminos se cruzaron por primera vez,<br>
+cuando hablar contigo era esa primavera temprana,<br>
+y los nervios genuinos me hacían sentir un cosquilleo en los pies.
+</p>
+
+<p>
+Aún recuerdo el instante en que fuimos "nosotros",<br>
+sentí que flotaba, que estaba en las nubes de verdad,<br>
+y aquel primer beso, al cumplir nuestro primer mes,<br>
+dejó en mi memoria una huella de pura felicidad.
+</p>
+
+<p>
+Llegamos al año, y el tiempo solo confirmó mi fortuna,<br>
+de tener a mi lado un hombre <span class="destacado">amable, gentil y optimista</span>,<br>
+que me ama a su manera, bajo el sol o bajo la luna,<br>
+un ser respetuoso que mantiene siempre mi alegría a la vista.
+</p>
+
+<p>
+<span class="destacado">Septiembre, un martes dieciséis</span>, marcó nuestro destino,<br>
+aquella primera cita, mi día favorito en el calendario,<br>
+medio día contigo, borrando todo lo que era desatino,<br>
+quedándose grabado en mi corazón como un diario.
+</p>
+
+<p>
+<span class="destacado">Diciembre, aquel día tres</span>, me trajo de vuelta los nervios,<br>
+los mismos de siempre, el mismo latido al verte llegar,<br>
+y ese peluche favorito, testigo de mis momentos más bellos,<br>
+fue el abrazo suave que me invitó a siempre confiar.
+</p>
+
+<p>
+Hoy amo tu sonrisa cuando juntos nos reímos,<br>
+esa conexión que crece y se vuelve cada día más fuerte,<br>
+amo la confianza en los silencios que compartimos,<br>
+y agradezco al cielo por haber tenido tanta suerte.
+</p>
+
+<p>
+Treinta y tres meses de tu presencia, de tu amor y respeto,<br>
+treinta y tres razones para seguir eligiéndote a diario,<br>
+<span class="destacado">te amo con el alma, más allá de cualquier objeto,<br>
+tú eres mi paz, mi alegría y mi mejor escenario.</span>
+</p>
+</div>
+
+<div class="ornament">&diams; &bull; &diams;</div>
+
+<div class="dedicatoria">
+<h3>1004 días después</h3>
+<p>
+Hoy no son solo 33 meses,<br>
+hoy son <strong style="color:#D8A7B1;">1004 días</strong> de elegirnos cada amanecer,<br>
+de celebrar lo simple, de reírnos juntos,<br>
+de construir este amor que solo crece con el tiempo.<br><br>
+Gracias por cada sonrisa, cada abrazo, cada momento.<br>
+Esto es solo el comienzo.
+</p>
+
+<a href="33-cosas.html" class="btn-secundario">Descubre 33 cosas que amo de ti</a>
+</div>
+
+<footer>
+<span>&diams;</span> Hecho con todo mi amor para ti <span>&diams;</span>
+</footer>
+
+</body>
+</html>

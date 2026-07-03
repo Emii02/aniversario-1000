@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>33 cosas que amo de ti</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: #1B1B1B;
+color: #E8D9C1;
+font-family: 'Cormorant Garamond', serif;
+line-height: 1.9;
+min-height: 100vh;
+font-size: 1.15em;
+}
+
+body::before {
+content: '';
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background:
+radial-gradient(ellipse at 50% 0%, rgba(113,9,18,0.08) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 80%, rgba(194,141,57,0.05) 0%, transparent 50%);
+pointer-events: none;
+z-index: 0;
+}
+
+header {
+background: linear-gradient(180deg, #4B1D3F 0%, #1B1B1B 100%);
+padding: 70px 20px 50px;
+text-align: center;
+border-bottom: 3px solid #D8A7B1;
+position: relative;
+overflow: hidden;
+}
+
+header::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 10%;
+right: 10%;
+height: 1px;
+background: linear-gradient(90deg, transparent, #D8A7B1, transparent);
+}
+
+header h1 {
+font-family: 'Playfair Display', serif;
+font-size: 2.8em;
+color: #E8D9C1;
+margin-bottom: 12px;
+text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+letter-spacing: 2px;
+}
+
+header .subtitle {
+font-size: 1em;
+color: #D8A7B1;
+font-weight: 300;
+letter-spacing: 4px;
+text-transform: uppercase;
+font-style: italic;
+}
+
+.ornament {
+text-align: center;
+font-size: 1.2em;
+color: #D8A7B1;
+margin: 25px 0;
+letter-spacing: 15px;
+opacity: 0.6;
+font-family: 'Playfair Display', serif;
+}
+
+nav {
+background: #1B1B1B;
+padding: 20px;
+text-align: center;
+border-bottom: 1px solid rgba(194,141,57,0.15);
+}
+
+nav a {
+display: inline-block;
+padding: 10px 30px;
+margin: 0 8px;
+background: transparent;
+color: #D8A7B1;
+text-decoration: none;
+border: 1px solid rgba(194,141,57,0.4);
+letter-spacing: 2px;
+transition: all 0.4s ease;
+text-transform: uppercase;
+font-size: 0.8em;
+font-family: 'Cormorant Garamond', serif;
+}
+
+nav a:hover, nav a.active {
+background: #D8A7B1;
+color: #1B1B1B;
+border-color: #D8A7B1;
+}
+
+.intro {
+max-width: 650px;
+margin: 50px auto 30px;
+padding: 0 20px;
+text-align: center;
+}
+
+.intro h2 {
+font-family: 'Playfair Display', serif;
+color: #D8A7B1;
+font-size: 1.8em;
+margin-bottom: 18px;
+letter-spacing: 2px;
+font-weight: 400;
+}
+
+.intro p {
+color: #E8D9C1;
+font-size: 1.05em;
+line-height: 2;
+font-style: italic;
+}
+
+.lista-container {
+max-width: 750px;
+margin: 30px auto 60px;
+padding: 0 20px;
+display: grid;
+grid-template-columns: 1fr;
+gap: 10px;
+}
+
+.lista-item {
+background: rgba(13,13,13,0.8);
+border: 1px solid rgba(194,141,57,0.12);
+padding: 22px 28px;
+display: flex;
+align-items: flex-start;
+gap: 20px;
+transition: all 0.4s ease;
+}
+
+.lista-item:hover {
+border-color: #D8A7B1;
+background: rgba(75,29,63,0.2);
+}
+
+.lista-numero {
+font-family: 'Playfair Display', serif;
+font-size: 1.3em;
+font-weight: 400;
+color: #D8A7B1;
+min-width: 42px;
+height: 42px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid rgba(194,141,57,0.3);
+flex-shrink: 0;
+}
+
+.lista-item:hover .lista-numero {
+background: #D8A7B1;
+color: #1B1B1B;
+border-color: #D8A7B1;
+}
+
+.lista-texto {
+color: #E8D9C1;
+font-size: 1em;
+padding-top: 6px;
+}
+
+.lista-texto strong {
+color: #D8A7B1;
+font-weight: 600;
+}
+
+.btn-volver {
+display: block;
+text-align: center;
+margin: 40px auto 60px;
+}
+
+.btn-volver a {
+display: inline-block;
+padding: 12px 40px;
+background: transparent;
+color: #D8A7B1;
+text-decoration: none;
+border: 1px solid #D8A7B1;
+letter-spacing: 3px;
+transition: all 0.4s ease;
+text-transform: uppercase;
+font-size: 0.8em;
+font-family: 'Cormorant Garamond', serif;
+}
+
+.btn-volver a:hover {
+background: #D8A7B1;
+color: #1B1B1B;
+}
+
+footer {
+background: #1B1B1B;
+padding: 35px 20px;
+text-align: center;
+border-top: 1px solid rgba(194,141,57,0.15);
+color: #4B1D3F;
+font-size: 0.9em;
+letter-spacing: 3px;
+}
+
+footer span {
+color: #D8A7B1;
+}
+
+@media (max-width: 600px) {
+header h1 { font-size: 1.8em; }
+.lista-container { grid-template-columns: 1fr; }
+.lista-item { padding: 18px; flex-wrap: wrap; gap: 12px; }
+nav a { display: block; margin: 8px auto; max-width: 220px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-content">
+<h1>33 cosas que amo de ti</h1>
+<p class="subtitle">Pequeñas razones que hacen enorme nuestro amor</p>
+</div>
+</header>
+
+<div class="ornament">&diams; &bull; &diams;</div>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="33-cosas.html" class="active">33 cosas que amo de ti</a>
+</nav>
+
+<div class="intro">
+<h2>Treinta y tres razones para amarte más cada día</h2>
+<p>
+Cada una de estas cosas es un pedacito de ti que guardo en mi corazón.<br>
+Desde lo más sencillo hasta lo más profundo, todo en ti me hace feliz.
+</p>
+</div>
+
+<div class="ornament">&diams; &bull; &diams;</div>
+
+<div class="lista-container">
+
+<div class="lista-item">
+<div class="lista-numero">1</div>
+<div class="lista-texto"><strong>Tu sonrisa sincera</strong> cuando algo pequeño te alegra el día. Esa capacidad de encontrar felicidad en lo simple es lo que más admiro de ti.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">2</div>
+<div class="lista-texto"><strong>Cómo me hablas emocionado de Cristiano Ronaldo</strong>. Ver tus ojos brillar mientras me cuentas cada detalle me hace amarte más. Me encanta escucharte hablar con tanta pasión.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">3</div>
+<div class="lista-texto"><strong>La forma en que me miras</strong> cuando estoy hablando, como si cada palabra mía fuera lo más importante del mundo.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">4</div>
+<div class="lista-texto"><strong>Tu abrazo después de un largo día</strong>. Ese momento en que todo el estrés desaparece porque estoy entre tus brazos.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">5</div>
+<div class="lista-texto"><strong>Cómo celebras mis logros</strong> con la misma emoción —o más— que si fueran tuyos. Tu generosidad me inspira cada día.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">6</div>
+<div class="lista-texto"><strong>Tu risa contagiosa</strong>. Esa que no puedes controlar y que termina contagiándome a mí. Es mi sonido favorito.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">7</div>
+<div class="lista-texto"><strong>La manera en que dices mi nombre</strong>. Suena diferente cuando lo dices tú, como si tuviera un significado especial.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">8</div>
+<div class="lista-texto"><strong>Tu paciencia infinita</strong> conmigo y con el mundo. Me enseñas que la calma es una forma de amor.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">9</div>
+<div class="lista-texto"><strong>Cómo me tomas de la mano</strong> cuando caminamos, como si no quisieras soltarme nunca.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">10</div>
+<div class="lista-texto"><strong>Tus ocurrencias espontáneas</strong> que me sacan una sonrisa cuando menos lo espero. Tienes un don para alegrar mis días.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">11</div>
+<div class="lista-texto"><strong>La forma en que te preocupas por mí</strong> incluso en los detalles más pequeños. Eso demuestra lo grande que es tu corazón.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">12</div>
+<div class="lista-texto"><strong>Cómo me cuentas tus teorías del fútbol</strong> con esa seguridad que te caracteriza. Amo verte tan seguro de lo que sabes.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">13</div>
+<div class="lista-texto"><strong>Tu olor</strong>. Ese aroma que te identifica y que siempre quiero tener cerca.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">14</div>
+<div class="lista-texto"><strong>La manera en que me haces reír</strong> incluso en mis peores días. Tienes el superpoder de cambiar mi estado de ánimo.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">15</div>
+<div class="lista-texto"><strong>Tus silencios cómplices</strong>. Esos momentos en los que no necesitamos palabras para entendernos.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">16</div>
+<div class="lista-texto"><strong>Cómo me abrazas cuando estoy triste</strong>. Tu abrazo es mi refugio favorito.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">17</div>
+<div class="lista-texto"><strong>Tu forma de ver la vida</strong> con optimismo. Me enseñas que siempre hay un lado bueno en todo.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">18</div>
+<div class="lista-texto"><strong>La textura de tu piel</strong> cuando me acerco a ti. Cada centímetro de ti me fascina.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">19</div>
+<div class="lista-texto"><strong>Cómo te emocionas cuando hablamos de nuestro futuro</strong>. Ver tus planes conmigo me llena de esperanza.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">20</div>
+<div class="lista-texto"><strong>Tu pelo alborotado</strong>. Esa forma tan auténtica de verte que solo yo conozco.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">21</div>
+<div class="lista-texto"><strong>La manera en que me dices "te amo"</strong>. Siempre en el momento justo, siempre con el tono perfecto.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">22</div>
+<div class="lista-texto"><strong>Cómo me defiendes</strong> sin pensarlo dos veces. Saber que siempre estarás de mi lado me da una seguridad inmensa.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">23</div>
+<div class="lista-texto"><strong>Tus ocurrencias con los memes</strong>. Te encanta compartirlos conmigo y me muero de risa con tus hallazgos.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">24</div>
+<div class="lista-texto"><strong>La manera en que me miras desde lejos</strong> cuando estamos en un lugar lleno de gente. Esa mirada que solo es para mí.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">25</div>
+<div class="lista-texto"><strong>Tu forma de tomar mi mano en la noche</strong>. Esa conexión que mantenemos incluso dormidos.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">26</div>
+<div class="lista-texto"><strong>Cómo me cantas canciones</strong>. No importa si desafinas, tu voz es la más bonita del mundo cuando cantas para mí.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">27</div>
+<div class="lista-texto"><strong>Tu forma de ser honesto conmigo</strong>. A veces duelen tus palabras, pero sé que siempre vienen desde el amor.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">28</div>
+<div class="lista-texto"><strong>Cómo te emocionan los atardeceres</strong>. Me encanta compartir esos momentos contigo.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">29</div>
+<div class="lista-texto"><strong>Tu forma de pedir disculpas</strong>. Sincera, sin rodeos, sin orgullo. Eso demuestra lo grande que eres.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">30</div>
+<div class="lista-texto"><strong>Cómo me cuidas cuando estoy enferma</strong>. Te conviertes en la persona más atenta y tierna del mundo.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">31</div>
+<div class="lista-texto"><strong>La complicidad en tus miradas pícaras</strong>. Siempre sé lo que estás pensando con solo verte.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">32</div>
+<div class="lista-texto"><strong>Tu forma de hacer que lo ordinario se vuelva extraordinario</strong>. Contigo hasta el día más aburrido se convierte en aventura.</div>
+</div>
+
+<div class="lista-item">
+<div class="lista-numero">33</div>
+<div class="lista-texto"><strong>Que después de 1004 días</strong>, sigo eligiéndote cada mañana. Y sé que tú también me eliges a mí. Eso, amor mío, es lo más hermoso de todo.</div>
+</div>
+
+</div>
+
+<div class="ornament">&diams; &bull; &diams;</div>
+
+<div class="btn-volver">
+<a href="index.html">Volver al inicio</a>
+</div>
+
+<footer>
+<span>&diams;</span> 33 razones, 1004 días, un solo amor <span>&diams;</span>
+</footer>
+
+</body>
+</html>
